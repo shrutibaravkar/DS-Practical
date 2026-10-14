@@ -1,0 +1,77 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int rollno[100];
+    float marks[100];
+    int n=0;
+    int choice;
+    int searchroll;
+
+    do
+    {
+        cout<<"\n\n======STUDENT MANAGEMENT SYSTEM======";
+        cout<<"\n1.Add Student";
+        cout<<"\n2.Display Students";
+        cout<<"\n3.Search Student using roll number";
+        cout<<"\n4.Exit";
+        cout<<"\nEnter your Choice: ";
+        cin>>choice;
+
+        if(choice==1)
+        {
+            cout<<"Enter Roll Number:";
+            cin>>rollno[n];
+            cout<<"Enter Marks:";
+            cin>>marks[n];
+            n++;
+            cout<<"Record added sucessfully";
+        }
+        else if(choice==2)
+        {
+            cout<<"\nRoll Number of Students:\n";
+            for(int i=0;i<n;i++)
+            {
+                cout<<"Roll Number:"<<rollno[i]<<endl;
+                cout<<"Marks:"<<marks[i]<<endl;
+            }
+        }
+        else if(choice==3)
+        {
+            cout<<"Enter Roll Number to search: ";
+            cin>>searchroll;
+
+            bool found=false;
+
+            for(int i=0;i<n;i++)
+            {
+                if(rollno[i]==searchroll)
+                {
+                    found=true;
+                    cout<<"Roll Number Found:"<<rollno[i]<<endl;
+                    break;
+                }
+            }
+
+            if(found)
+            {
+                cout<<"Roll Number Found!";
+            }
+            else
+            {
+                cout<<"Roll Number Not Found!";
+            }
+        }
+        else if(choice==4)
+        {
+            cout<<"Thank you!";
+        }
+        else
+        {
+            cout<<"Invalid Choice!";
+        }
+
+    } while(choice!=4);
+
+    return 0;
+}
